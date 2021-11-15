@@ -118,6 +118,7 @@ class App extends React.Component {
       trunfo,
       isSaveButtonDisabled,
       hasTrunfo,
+      newCard,
     } = this.state;
 
     return (
@@ -138,6 +139,19 @@ class App extends React.Component {
           buttonValidate={ this.buttonValidate }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
+        {newCard.map((value, index) => (
+          <Card
+            key={ index }
+            cardName={ value.name }
+            cardDescription={ value.description }
+            cardAttr1={ value.attr1 }
+            cardAttr2={ value.attr2 }
+            cardAttr3={ value.attr3 }
+            cardImage={ value.image }
+            cardRare={ value.rare }
+            cardTrunfo={ value.trunfo }
+          />
+        ))}
         <Card
           cardName={ name }
           cardDescription={ description }
