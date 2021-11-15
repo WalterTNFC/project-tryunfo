@@ -16,7 +16,9 @@ class App extends React.Component {
       image: '',
       rare: '',
       trunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
+      // Para salvar o novo conjunto de cartas
       newCard: [],
     };
 
@@ -50,6 +52,7 @@ class App extends React.Component {
       newCard,
     } = this.state;
 
+    const trunfoCard = trunfo === true;
     const card = {
       name,
       description,
@@ -70,6 +73,7 @@ class App extends React.Component {
       image: '',
       rare: '',
       trunfo: false,
+      hasTrunfo: trunfoCard,
       isSaveButtonDisabled: true,
       newCard: newCard.concat(card),
     });
@@ -113,6 +117,7 @@ class App extends React.Component {
       rare,
       trunfo,
       isSaveButtonDisabled,
+      hasTrunfo,
     } = this.state;
 
     return (
@@ -127,6 +132,7 @@ class App extends React.Component {
           cardImage={ image }
           cardRare={ rare }
           cardTrunfo={ trunfo }
+          hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           buttonValidate={ this.buttonValidate }
