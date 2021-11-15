@@ -3,11 +3,20 @@ import PropTypes from 'prop-types';
 
 class Form extends React.Component {
   render() {
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage,
-      cardRare, cardTrunfo,
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
       // hasTrunfo,
       isSaveButtonDisabled,
-      onInputChange, onSaveButtonClick } = this.props;
+      onInputChange,
+      onSaveButtonClick,
+      buttonValidate } = this.props;
 
     return (
       <form>
@@ -20,6 +29,8 @@ class Form extends React.Component {
             name="name"
             id="name"
             data-testid="name-input"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           />
         </label>
 
@@ -31,6 +42,8 @@ class Form extends React.Component {
             name="description"
             id="description"
             data-testid="description-input"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           />
         </label>
 
@@ -43,6 +56,8 @@ class Form extends React.Component {
             name="attr1"
             id="attr1"
             data-testid="attr1-input"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           />
         </label>
 
@@ -55,6 +70,8 @@ class Form extends React.Component {
             name="attr2"
             id="attr2"
             data-testid="attr2-input"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           />
         </label>
 
@@ -67,6 +84,8 @@ class Form extends React.Component {
             name="attr3"
             id="attr3"
             data-testid="attr3-input"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           />
         </label>
 
@@ -79,6 +98,8 @@ class Form extends React.Component {
             name="image"
             id="image"
             data-testid="image-input"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           />
         </label>
 
@@ -89,6 +110,8 @@ class Form extends React.Component {
             data-testid="rare-input"
             name="rare"
             id="rare"
+            onKeyUp={ buttonValidate }
+            onClick={ buttonValidate }
           >
             <option value="normal">normal</option>
             <option value="raro">raro</option>
@@ -136,6 +159,7 @@ Form.propTypes = {
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
+  buttonValidate: PropTypes.func.isRequired,
 };
 
 export default Form;
