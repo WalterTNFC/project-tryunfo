@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// test
+// test 2
 class Card extends React.Component {
   render() {
     const {
